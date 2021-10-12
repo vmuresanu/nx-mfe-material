@@ -27,6 +27,20 @@
     ]
   },
   "projects": {
+    "login-app": {
+      "tags": []
+    },
+    "login-app-e2e": {
+      "tags": [],
+      "implicitDependencies": ["login-app"]
+    },
+    "order-app": {
+      "tags": []
+    },
+    "order-app-e2e": {
+      "tags": [],
+      "implicitDependencies": ["order-app"]
+    },
     "shell-app": {
       "tags": []
     },

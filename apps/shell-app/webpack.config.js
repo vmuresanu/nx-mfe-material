@@ -23,12 +23,36 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      remotes: {},
+      remotes: {
+        login_app: 'login_app@http://localhost:4201/remoteEntry.js',
+        order_app: 'order_app@http://localhost:4202/remoteEntry.js',
+      },
       shared: {
-        '@angular/core': {singleton: true, strictVersion: true, requiredVersion: '^12.2.9'},
-        '@angular/common': {singleton: true, strictVersion: true, requiredVersion: '^12.2.9'},
-        '@angular/common/http': {singleton: true, strictVersion: true, requiredVersion: '^12.2.9'},
-        '@angular/router': {singleton: true, strictVersion: true, requiredVersion: '^12.2.9'},
+        '@angular/core': {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: '^12.2.9',
+        },
+        '@angular/common': {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: '^12.2.9',
+        },
+        '@angular/common/http': {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: '^12.2.9',
+        },
+        '@angular/router': {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: '^12.2.9',
+        },
+        '@angular/material/toolbar': {singleton: true, strictVersion: true, requiredVersion: '^12.2.9'},
+        '@angular/material/button': {singleton: true, strictVersion: true, requiredVersion: '^12.2.9'},
+        '@angular/material/sidenav': {singleton: true, strictVersion: true, requiredVersion: '^12.2.9'},
+        '@angular/material/icon': {singleton: true, strictVersion: true, requiredVersion: '^12.2.9'},
+        '@angular/material/list': {singleton: true, strictVersion: true, requiredVersion: '^12.2.9'},
         ...sharedMappings.getDescriptors(),
       },
     }),
